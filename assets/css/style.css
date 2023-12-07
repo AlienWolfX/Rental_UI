@@ -2430,9 +2430,18 @@ section {
   color: #f6b024;
 }
 
+
+
+/*--------------------------------------------------------------
+# Sign in & Sing out
+--------------------------------------------------------------*/
+
 .wrapper{
-  position: relative;
-  width: 450px;
+  position: fixed; /* Change 'relative' to 'fixed' */
+  top: 50%; /* Adjust as needed */
+  left: 50%; /* Adjust as needed */
+  transform: translate(-50%, -50%); /* Center the element */
+  width: 26%; /*450px*/
   height: 600px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .5);
@@ -2447,42 +2456,96 @@ section {
   transition: transform .5s ease, height 2.s ease;
 }
 
+/* Add 'position: sticky;' to .wrapper.active-popup */
 .wrapper.active-popup {
   transform: scale(1);
+  position: fixed; /* Elements add */
+  top: 50%; /* Elements add */
+  left: 50%; /* Elements add */
+  transform: translate(-50%, -50%);/* Elements add */
 }
 
 .wrapper.active {
   height: 675px;
+  position: fixed;  /* Elements add */
+  top: 50%;   /* Elements add */
+  left: 50%; /* Elements add */
+
 }
 
 .wrapper .form-boxed{
   width: 100%;
-  padding: 40px;
+  padding: 8%; /* 40px */
 }
 
 .wrapper .form-boxed.signin{
+  width: 100%;
   transition: transform .18s ease;
   transform: translateX(0);
 }
 
 .wrapper.active .form-boxed.signin{
+  width: 100%;
+  position: fixed;
   transition: none;
-  transform: translateX(-450px);
+  transform: translateX(-100%);
 }
 
 
 .wrapper .form-boxed.signup{
-  position: absolute;
+  width: 100%;
+  position: fixed;
   transition: none;
-  transform: translateX(450px);
+  transform: translateX(100%);
 
 }
 
 .wrapper.active .form-boxed.signup{
+  width: 100%;
   transition: transform .18s ease;
   transform: translateX(0);
 }
 
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 90%; /*450px*/
+    height: 550px;
+  }
+  .wrapper.active-popup {
+    top: 50%; /* Elements add */
+    left: 50%; /* Elements add */
+  
+  }
+  
+  .wrapper.active {
+    height: 625px;
+    top: 55%;   /* Elements add */
+    left: 50%; /* Elements add */
+  }
+  
+
+  .wrapper .form-boxed.signin{
+    width: 100%;
+    transition: transform .18s ease;
+    transform: translateX(0);
+  }
+  
+  
+  .wrapper .form-boxed.signup{
+    width: 100%;
+    position: fixed;
+    transition: none;
+    transform: translateX(100%);
+  
+  }
+  
+  .wrapper.active .form-boxed.signup{
+    width: 100%;
+    transition: transform .18s ease;
+    transform: translateX(0);
+  }
+}
 
 
 .wrapper .icon-closed{
@@ -2607,3 +2670,117 @@ section {
 .signin-signup p a:hover {
 text-decoration: underline;
 }
+
+
+
+/*--------------------------------------------------------------
+# Ratings
+--------------------------------------------------------------*/
+
+.rating {
+  position: absolute;
+  transform: translate(32%, -122%) rotateY(180deg);
+  display: flex;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  display: block;
+  cursor: pointer;
+  width: 30px; /* Fixed width for the stars */
+}
+
+.rating label:before {
+  content: '\f005';
+  font-family: fontAwesome;
+  position: relative;
+  display: block;
+  font-size: 24px; /* Fixed font size for the stars */
+  color: #101010;
+}
+
+.rating label:after {
+  content: '\f005';
+  font-family: fontAwesome;
+  position: absolute;
+  display: block;
+  font-size: 24px; /* Fixed font size for the stars */
+  color: #1f9cff;
+  top: 0;
+  opacity: 0;
+  transition: 0.5s;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.rating label:hover:after,
+.rating input:hover~label:after,
+.rating input:checked~label:after {
+  opacity: 1;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .rating {
+    transform: translate(50%, -162%) rotateY(180deg);
+  }
+
+  .rating label {
+    width: 20px; /* Adjust width for smaller screens */
+  }
+
+  .rating label:before,
+  .rating label:after {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* 
+.rating{
+  top:50%;
+  left: 50%;
+  transform: translate(-40%, -70%) rotateY(180deg);
+  display: flex;
+}
+
+.rating input{
+display: none;
+}
+.rating label{
+  display: block;
+  cursor: pointer;
+  width: 50px;
+ 
+}
+
+.rating label:before{
+  content: '\f005';
+  font-family: fontAwesome;
+  position: relative;
+  display: block;
+  font-size: 50px;
+  color: #101010;
+}
+
+.rating label:after{
+  content: '\f005';
+  font-family: fontAwesome;
+  position: absolute;
+  display: block;
+  font-size: 50px;
+  color: #1f9cff;
+  top: 0;
+  opacity: 0;
+  transition: .5s;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.rating label:hover:after,
+.rating input:hover~label:after,
+.rating input:checked~label:after
+{
+  opacity: 1;
+} */
