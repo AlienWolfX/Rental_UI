@@ -9,6 +9,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+p {
+  text-align: justify;
+}
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -628,7 +631,7 @@ section {
 .icon-boxes {
   padding-top: 0;
   position: relative;
-  z-index: 100;
+  z-index: 99;
 }
 
 .icon-boxes .icon-box {
@@ -2454,6 +2457,7 @@ section {
   overflow: hidden;
   transform: scale(0);
   transition: transform .5s ease, height 2.s ease;
+  z-index: 120;
 }
 
 /* Add 'position: sticky;' to .wrapper.active-popup */
@@ -2470,7 +2474,6 @@ section {
   position: fixed;  /* Elements add */
   top: 50%;   /* Elements add */
   left: 50%; /* Elements add */
-
 }
 
 .wrapper .form-boxed{
@@ -2562,7 +2565,7 @@ section {
   align-items: center;
   border-bottom-left-radius: 20px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 150;
 }
 
 .form-boxed h2{
