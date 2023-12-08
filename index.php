@@ -3,7 +3,7 @@
 
   if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
+  	header("location: login.php");
   }
   if (isset($_GET['logout'])) {
   	session_destroy();
@@ -78,6 +78,18 @@
       <h1 class="logo"><a href="index.html">ALLUC</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href=index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <center>
+            <?php if (isset($_SESSION['success'])) : ?>
+              <div class="error success" >
+                <h3>
+                  <?php 
+                    echo $_SESSION['success']; 
+                    unset($_SESSION['success']);
+                  ?>
+                </h3>
+              </div>
+            <?php endif ?>
+    </center>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -86,7 +98,8 @@
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Cars</a></li>
           <li><a class="nav-link scrollto" href="#team">Founder</a></li>
-          <li><a href="blog.php">Blog</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a href="blog.php">Car-Details</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -104,8 +117,7 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="cta d-none d-md-block" href="index.php?logout='1'" class="scrollto">Sign out</a></li>
+          <button type="button" class=" btn btn-custom text-light" ><a href="home.php?logout='1'">Sign out</a></button>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -115,18 +127,6 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
-  <center>
-            <?php if (isset($_SESSION['success'])) : ?>
-              <div class="error success" >
-                <h3>
-                  <?php 
-                    echo $_SESSION['success']; 
-                    unset($_SESSION['success']);
-                  ?>
-                </h3>
-              </div>
-            <?php endif ?>
-    </center>
 
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
 
@@ -400,7 +400,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Cars</h2>
+          <h2>Sample Cars</h2>
           <p>Discover our diverse fleet. From compact to luxury, we have the perfect car for your journey. Choose your ride today</p>
         </div>
 
@@ -417,96 +417,88 @@
 
         <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/1-Chevrolet-Silverado.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Chevrolet</h4>
-              <a href="assets/img/portfolio/1-Chevrolet-Silverado.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="assets/img/portfolio/Cars/1-Chevrolet-Silverado.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Chevrolet</h4>
+                <a href="assets/img/portfolio/Cars/1-Chevrolet-Silverado.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="High-demand vehicles"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" data-action="Signup" class="details-link" title="More Details"><i class="bx bx-link"  data-action="Signup"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/3_Ferrari-Pista-Spider-rear-3-4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Ferrari</h4>
-              <p>Ferrari</p>
-              <a href="assets/img/portfolio/3_Ferrari-Pista-Spider-rear-3-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <img src="assets/img/portfolio/Cars/3_Ferrari-.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Ferrari</h4>
+                <a href="assets/img/portfolio/Cars/3_Ferrari-.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Preferred Choice"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" data-action="Signup" class="details-link"  title="More Details"><i class="bx bx-link " data-action="Signup"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/2020-suzuki-xl7-philippines-exterior-front-quarter-5f6066d2a0223.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Suzuki</h4>
-              <p>Suzuki</p>
-              <a href="assets/img/portfolio/2020-suzuki-xl7-philippines-exterior-front-quarter-5f6066d2a0223.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="assets/img/portfolio/Cars/BeFunky-collage__4__1200x768.jpeg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Suzuki</h4>
+                <a href="assets/img/portfolio/Cars/BeFunky-collage__4__1200x768.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="High-demand vehicles"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" data-action="Signup" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link" data-action="Signup"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/2022-mazda-cx-5-2p5-turbo-signature-123-1657559083.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Mazda</h4>
-              <p>Mazda</p>
-              <a href="assets/img/portfolio/2022-mazda-cx-5-2p5-turbo-signature-123-1657559083.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <img src="assets/img/portfolio/Cars/2022-mazda-cx-5-2p5-turbo-signature-123-1657559083.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Mazda</h4>
+                <a href="assets/img/portfolio/Cars/2022-mazda-cx-5-2p5-turbo-signature-123-1657559083.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Popular picks"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/230509104454-02-ford-ranger-reveal.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Ford</h4>
-              <p>Ford</p>
-              <a href="assets/img/portfolio/230509104454-02-ford-ranger-reveal.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <img src="assets/img/portfolio/Cars/230509104454-02-ford-ranger-reveal.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Ford</h4>
+                <a href="assets/img/portfolio/230509104454-02-ford-ranger-reveal.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Preferred Choice"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/mitsubishi-xfc-concept-6350aae931b56.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Mitsubishi</h4>
-              <p>Mitsubishi</p>
-              <a href="assets/img/portfolio/mitsubishi-xfc-concept-6350aae931b56.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="assets/img/portfolio/Cars/mitsubishi-xfc-concept-6350aae931b56.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Mitsubishi</h4>
+                <a href="assets/img/portfolio/Cars/mitsubishi-xfc-concept-6350aae931b56.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="High-demand vehicles"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/Honda_Civic_Hybrid_(2022,_Europe)_IAA_2023_1X7A0545_(2).jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Honda</h4>
-              <p>Honda</p>
-              <a href="assets/img/portfolio/Honda_Civic_Hybrid_(2022,_Europe)_IAA_2023_1X7A0545_(2).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <img src="assets/img/portfolio/Cars/Honda_Civic_Hybrid_(2022,_Europe)_IAA_2023_1X7A0545_(2).jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Honda</h4>
+                <a href="assets/img/portfolio/Cars/Honda_Civic_Hybrid_(2022,_Europe)_IAA_2023_1X7A0545_(2).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Popular picks"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/nissan-z-proto-u-s-3-1626450456.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Nissan</h4>
-              <p>Nissan</p>
-              <a href="assets/img/portfolio/nissan-z-proto-u-s-3-1626450456.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <img src="assets/img/portfolio/Cars/nissan-z-proto-u-s-3-1626450456.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Nissan</h4>
+                <a href="assets/img/portfolio/Cars/nissan-z-proto-u-s-3-1626450456.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Popular picks"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/rJlD2JZv-i-LSr5pYcD-(edit).jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Maserati</h4>
-              <p>Maserati</p>
-              <a href="assets/img/portfolio/rJlD2JZv-i-LSr5pYcD-(edit).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <img src="assets/img/portfolio/Cars/rJlD2JZv-i-LSr5pYcD-(edit).jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Maserati</h4>
+                <a href="assets/img/portfolio/Cars/rJlD2JZv-i-LSr5pYcD-(edit).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="javascript:void(0);" data-action="Signin" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
             </div>
-          </div>
 
-        </div>
+            </div>
 
       </div>
     </section><!-- End Portfoio Section -->
@@ -595,8 +587,8 @@
       </div>
     </section><!-- End Team Section -->
     
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq section-bg">
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        <section id="faq" class="faq section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -606,47 +598,42 @@
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">How do I rent a car from your company? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
+                Renting a car with us is easy! You can either book online through our user-friendly website or visit one of our conveniently located branches. Follow the simple steps, and you'll be on the road in no time.         </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Can I choose the specific car model I want to rent? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
+                Absolutely! Our online booking system allows you to select the car model that suits your preferences and needs. We offer a diverse range of vehicles to cater to different tastes and requirements.   </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">What is included in the rental price? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </p>
+                Our rental prices typically include basic insurance coverage and 24/7 roadside assistance. Additional options, such as GPS navigation and child seats, are available for a nominal fee. You can review the inclusions and customize your rental accordingly.      </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">How do I return the rental car? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                </p>
+                Returning the car is simple. Just bring it back to the designated drop-off location at the agreed-upon time. If you need flexibility, we offer options for extended rental periods, and our staff will assist you with the return process.             </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="500">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Can I modify or cancel my reservation? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                </p>
+                Yes, you can modify or cancel your reservation online or by contacting our customer service. We understand that plans can change, and we strive to provide flexibility to accommodate your needs.          </p>
               </div>
             </li>
 
@@ -671,19 +658,19 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p> KM 7 NH1, Butuan City, Agusan Del Norte, Philippines 8600</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>ALLUC@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>09631922544</p>
               </div>
 
             </div>
@@ -732,7 +719,8 @@
         <div class="row">
           <div class="col-lg-6">
             <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <p>Our newsletter delivers timely updates, exclusive content, and valuable insights 
+              to keep you informed and engaged in the latest happenings and trends</p>
           </div>
           <div class="col-lg-6">
             <form action="" method="post">
@@ -761,29 +749,31 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Customer Service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Corporate Solutions</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Roadside Assistance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Online Reservations</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Flexible Rental Periods</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+                      KM 7 NH1  Butuan City <br>               
+                      Agusan Del Norte<br>
+                      Philippines 8600 <br><br>
+              <strong>Phone:</strong> 09631922544<br>
+              <strong>Email:</strong> ALLUC@gmail.com<br>
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Anyar</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <h3>About ALLUC</h3>
+            <p>Our organization's car rental service ensures seamless mobility solutions, offering a diverse fleet of 
+              well-maintained vehicles to meet the varied needs of our members, 
+              providing convenience and reliability for every journey</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -797,20 +787,7 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Anyar</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/anyar-free-multipurpose-one-page-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
+    </footer><!-- End Footer -->
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
