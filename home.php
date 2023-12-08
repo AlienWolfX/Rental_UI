@@ -486,9 +486,9 @@ if (isset($_POST['signin_user'])) {
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">High-demand vehicles:</li>
-              <li data-filter=".filter-card">Popular picks</li>
+              <li data-filter=".filter-app">High-demand vehicles</li>
               <li data-filter=".filter-web">Preferred Choice</li>
+              <li data-filter=".filter-card">Popular picks</li>
             </ul>
           </div>
         </div>
@@ -496,90 +496,82 @@ if (isset($_POST['signin_user'])) {
         <div class="row portfolio-container">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/1-Chevrolet-Silverado.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/1-Chevrolet-Silverado.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Chevrolet</h4>
-              <a href="assets/img/portfolio/1-Chevrolet-Silverado.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/Cars/1-Chevrolet-Silverado.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="High-demand vehicles"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" data-action="Signup" class="details-link" title="More Details"><i class="bx bx-link"  data-action="Signup"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/3_Ferrari-Pista-Spider-rear-3-4.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/3_Ferrari-.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Ferrari</h4>
-              <p>Ferrari</p>
-              <a href="assets/img/portfolio/3_Ferrari-Pista-Spider-rear-3-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/Cars/3_Ferrari-.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Preferred Choice"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" data-action="Signup" class="details-link"  title="More Details"><i class="bx bx-link " data-action="Signup"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/2020-suzuki-xl7-philippines-exterior-front-quarter-5f6066d2a0223.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/BeFunky-collage__4__1200x768.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Suzuki</h4>
-              <p>Suzuki</p>
-              <a href="assets/img/portfolio/2020-suzuki-xl7-philippines-exterior-front-quarter-5f6066d2a0223.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/Cars/BeFunky-collage__4__1200x768.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="High-demand vehicles"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" data-action="Signup" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link" data-action="Signup"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/2022-mazda-cx-5-2p5-turbo-signature-123-1657559083.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/2022-mazda-cx-5-2p5-turbo-signature-123-1657559083.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Mazda</h4>
-              <p>Mazda</p>
-              <a href="assets/img/portfolio/2022-mazda-cx-5-2p5-turbo-signature-123-1657559083.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/Cars/2022-mazda-cx-5-2p5-turbo-signature-123-1657559083.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Popular picks"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/230509104454-02-ford-ranger-reveal.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/230509104454-02-ford-ranger-reveal.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Ford</h4>
-              <p>Ford</p>
-              <a href="assets/img/portfolio/230509104454-02-ford-ranger-reveal.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/230509104454-02-ford-ranger-reveal.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Preferred Choice"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/mitsubishi-xfc-concept-6350aae931b56.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/mitsubishi-xfc-concept-6350aae931b56.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Mitsubishi</h4>
-              <p>Mitsubishi</p>
-              <a href="assets/img/portfolio/mitsubishi-xfc-concept-6350aae931b56.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/Cars/mitsubishi-xfc-concept-6350aae931b56.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="High-demand vehicles"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/Honda_Civic_Hybrid_(2022,_Europe)_IAA_2023_1X7A0545_(2).jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/Honda_Civic_Hybrid_(2022,_Europe)_IAA_2023_1X7A0545_(2).jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Honda</h4>
-              <p>Honda</p>
-              <a href="assets/img/portfolio/Honda_Civic_Hybrid_(2022,_Europe)_IAA_2023_1X7A0545_(2).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/Cars/Honda_Civic_Hybrid_(2022,_Europe)_IAA_2023_1X7A0545_(2).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Popular picks"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/nissan-z-proto-u-s-3-1626450456.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/nissan-z-proto-u-s-3-1626450456.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Nissan</h4>
-              <p>Nissan</p>
-              <a href="assets/img/portfolio/nissan-z-proto-u-s-3-1626450456.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/Cars/nissan-z-proto-u-s-3-1626450456.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Popular picks"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" class="details-link" data-action="Signin" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/rJlD2JZv-i-LSr5pYcD-(edit).jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/Cars/rJlD2JZv-i-LSr5pYcD-(edit).jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Maserati</h4>
-              <p>Maserati</p>
-              <a href="assets/img/portfolio/rJlD2JZv-i-LSr5pYcD-(edit).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/Cars/rJlD2JZv-i-LSr5pYcD-(edit).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="javascript:void(0);" data-action="Signin" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
@@ -739,24 +731,24 @@ if (isset($_POST['signin_user'])) {
 
         <div class="row mt-1 d-flex justify-content-end" data-aos="fade-right" data-aos-delay="100">
 
-          <div class="col-lg-5">
+        <div class="col-lg-5">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p> KM 7 NH1, Butuan City, Agusan Del Norte, Philippines 8600</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>ALLUC@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>09631922544</p>
               </div>
 
             </div>
@@ -805,7 +797,8 @@ if (isset($_POST['signin_user'])) {
         <div class="row">
           <div class="col-lg-6">
             <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <p>Our newsletter delivers timely updates, exclusive content, and valuable insights 
+              to keep you informed and engaged in the latest happenings and trends</p>
           </div>
           <div class="col-lg-6">
             <form action="" method="post">
@@ -834,29 +827,31 @@ if (isset($_POST['signin_user'])) {
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Customer Service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Corporate Solutions</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Roadside Assistance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Online Reservations</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Flexible Rental Periods</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+                      KM 7 NH1  Butuan City <br>               
+                      Agusan Del Norte<br>
+                      Philippines 8600 <br><br>
+              <strong>Phone:</strong> 09631922544<br>
+              <strong>Email:</strong> ALLUC@gmail.com<br>
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Anyar</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <h3>About ALLUC</h3>
+            <p>Our organization's car rental service ensures seamless mobility solutions, offering a diverse fleet of 
+              well-maintained vehicles to meet the varied needs of our members, 
+              providing convenience and reliability for every journey</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -870,19 +865,8 @@ if (isset($_POST['signin_user'])) {
       </div>
     </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Anyar</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/anyar-free-multipurpose-one-page-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+
+    </footer><!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
