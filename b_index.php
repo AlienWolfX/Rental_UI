@@ -72,12 +72,15 @@ function build_calendar($month, $year) {
         if ($date < date('Y-m-d')) {
             $calendar .= "<td><h4>$currentDay</h4> <button class='btn btn-danger btn-xs' disabled>N/A</button>";
         } elseif (in_array($date, $bookings)) {
-            $calendar .= "<td class='$today'><h4>$currentDay</h4> <button class='btn btn-danger btn-xs'> <span class='glyphicon glyphicon-lock
-             '></span> Already Booked</button>";
+            $calendar .= "<td class='$today'><h4>$currentDay</h4> <button class='btn btn-danger btn-xs'> <span class='glyphicon glyphicon-lock'></span> Already Booked</button>";
         } else {
             
-            $calendar .= "<td class='$today'><h4>$currentDay</h4> <a href='book.php?date=" . $date . "' class='btn btn-success btn-xs'> <span class='glyphicon glyphicon-ok'></span> Book Now</a>";
+            $calendar .= "<td class='$today'><h4>$currentDay</h4> <a href='book.php?date=' class='btn btn-success btn-xs' data-action='confirmation'> <span class='glyphicon glyphicon-ok'></span> Book Now</a>";
+
         }
+    
+       
+        //book.php?date=" . $date . "
 
         $calendar .= "</td>";
         $currentDay++;
@@ -105,126 +108,32 @@ function build_calendar($month, $year) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <title>Online booking system</title>
-    <style>
-        @media only screen and (max-width: 760px),
-        (min-device-width: 802px) and (max-device-width: 1020px) {
-            /* Force table to not be like tables anymore */
-            table {
-                display: table;
-            }
-
-            thead,
-            tbody,
-            th,
-            td,
-            tr {
-                display: table-row;
-            }
-
-            th,
-            td {
-                display: table-cell;
-            }
-
-            .empty {
-                display: none;
-            }
-
-            /* Hide table headers (but not display: none;, for accessibility) */
-            th {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-
-            tr {
-                border: 1px solid #ccc;
-            }
-
-            td {
-                /* Behave  like a "row" */
-                border: none;
-                border-bottom: 1px solid #eee;
-                position: relative;
-                padding-left: 50%;
-            }
-
-            /*
-		Label the data
-		*/
-            td:nth-of-type(1):before {
-                content: "Sunday";
-            }
-
-            td:nth-of-type(2):before {
-                content: "Monday";
-            }
-
-            td:nth-of-type(3):before {
-                content: "Tuesday";
-            }
-
-            td:nth-of-type(4):before {
-                content: "Wednesday";
-            }
-
-            td:nth-of-type(5):before {
-                content: "Thursday";
-            }
-
-            td:nth-of-type(6):before {
-                content: "Friday";
-            }
-
-            td:nth-of-type(7):before {
-                content: "Saturday";
-            }
-        }
-
-        /* Smartphones (portrait and landscape) ----------- */
-
-        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-            body {
-                padding: 0;
-                margin: 0;
-            }
-        }
-
-        /* iPads (portrait and landscape) ----------- */
-
-        @media only screen and (min-device-width: 802px) and (max-device-width: 1020px) {
-            body {
-                width: 495px;
-            }
-        }
-
-        @media (min-width:641px) {
-            table {
-                table-layout: fixed;
-            }
-
-            td {
-                width: 33%;
-            }
-        }
-
-        .row {
-            margin-top: 20px;
-        }
-
-        .today {
-            background: #eee;
-        }
-    </style>
+    <link href="assets/css/style_calendar.css" rel="stylesheet">
 </head>
 
-<body style="background:#eee">
+<body>
     <div class="container alert alert-default" style="background:#fff">
         <div class="row">
             <div class="col-md-12">
                 <div class="alert alert-danger" style="background:#2ecc71;border:none;color:#fff">
                     <h1>Online Booking System</h1>
                 </div>
+                <div class="wrapper_calendar">   
+                <span class="icon-closed"><ion-icon name="close"></ion-icon> </span>  
+                    <div class="form-boxed ">
+                        <h1> ARE YOU SURE?</h1>
+                        <div class="btn-wrapper">
+                        <button type="button" class="btn btn-warning btn-lg white-button" id="yesButton">
+                            <a href="book.php?$calendar" class="calendar_yes">YES</a>
+                        </button>          
+                            <button type="button" class="btn btn-warning text-light btn-lg white-button">
+                                <a href="#" class="calendar_no ">NO</a>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <input type="hidden" id="selectedDateInput" name="selectedDateInput" value="">
                 <?php
                 $dateComponents = getdate();
                 if (isset($_GET['month']) && isset($_GET['year'])) {
@@ -239,6 +148,9 @@ function build_calendar($month, $year) {
             </div>
         </div>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="assets/js/calendar_script.js"></script>
 </body>
 
 </html>
